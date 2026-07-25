@@ -1,0 +1,670 @@
+/* ==========================
+   ALLROUNDER99 PREMIUM V2
+   PART 1 - BASE & HERO
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#05070d;
+    color:#fff;
+    overflow-x:hidden;
+    line-height:1.6;
+}
+
+/* Animated Background */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#00bfff22,transparent 45%),
+    radial-gradient(circle at bottom,#ff003322,transparent 40%),
+    linear-gradient(180deg,#05070d,#0b1120,#05070d);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(#ffffff22 1px,transparent 1px);
+    background-size:45px 45px;
+    opacity:.25;
+    animation:bgMove 30s linear infinite;
+    z-index:-1;
+}
+
+@keyframes bgMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-45px);
+    }
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px 20px;
+}
+
+.hero-content{
+    width:100%;
+    max-width:900px;
+}
+
+.hero-logos{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.hero-logo{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    border-radius:50%;
+    background:#fff;
+    padding:10px;
+    box-shadow:
+    0 0 25px rgba(0,191,255,.5),
+    0 0 40px rgba(255,0,80,.35);
+    animation:floatLogo 4s ease-in-out infinite;
+}
+
+.hero-logo:nth-child(2){
+    animation-delay:1.5s;
+}
+
+@keyframes floatLogo{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.hero h1{
+    font-size:2.3rem;
+    font-weight:800;
+    margin-bottom:15px;
+    line-height:1.3;
+}
+
+.hero h1 span{
+    color:#00bfff;
+}
+
+.hero p{
+    font-size:1.05rem;
+    color:#d5d5d5;
+    max-width:650px;
+    margin:0 auto 30px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 26px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#00bfff;
+    color:#fff;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 20px #00bfff;
+}
+
+.btn-secondary{
+    background:#ff0033;
+    color:#fff;
+}
+
+.btn-secondary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 20px #ff0033;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero{
+padding:60px 18px;
+}
+
+.hero-logo{
+width:95px;
+height:95px;
+}
+
+.hero h1{
+font-size:1.8rem;
+}
+
+.hero p{
+font-size:.95rem;
+}
+
+.btn{
+width:100%;
+max-width:280px;
+}
+}/* ==========================
+   PART 2 - WHY CHOOSE US
+========================== */
+
+.section{
+    padding:80px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2rem;
+    font-weight:800;
+    margin-bottom:50px;
+    color:#fff;
+}
+
+.section-title span{
+    color:#00bfff;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.why-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:28px;
+    text-align:center;
+    backdrop-filter:blur(14px);
+    transition:.35s;
+}
+
+.why-card:hover{
+    transform:translateY(-10px);
+    border-color:#00bfff;
+    box-shadow:0 0 25px rgba(0,191,255,.35);
+}
+
+.why-icon{
+    font-size:48px;
+    margin-bottom:18px;
+}
+
+.why-card h3{
+    margin-bottom:12px;
+    font-size:1.2rem;
+}
+
+.why-card p{
+    color:#d4d4d4;
+    font-size:.95rem;
+}
+
+/* ==========================
+   SPORTS SECTION
+========================== */
+
+.sports-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.sport-card{
+    background:rgba(255,255,255,.05);
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    transition:.35s;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.sport-card:hover{
+    transform:translateY(-8px) scale(1.04);
+    box-shadow:0 0 20px rgba(0,191,255,.35);
+}
+
+.sport-icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.sport-card h3{
+    font-size:1.1rem;
+    margin-bottom:8px;
+}
+
+.sport-card p{
+    color:#ccc;
+    font-size:.9
+    /* ==========================
+   PART 3 - PLATFORM CARDS
+========================== */
+
+.platforms{
+    padding:80px 20px;
+}
+
+.platform-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.platform-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(16px);
+    border-radius:24px;
+    padding:35px 25px;
+    text-align:center;
+    transition:.4s ease;
+    overflow:hidden;
+    position:relative;
+}
+
+.platform-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,
+    rgba(0,191,255,.15),
+    transparent,
+    rgba(255,0,80,.15));
+    opacity:0;
+    transition:.4s;
+}
+
+.platform-card:hover::before{
+    opacity:1;
+}
+
+.platform-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(0,191,255,.35);
+    border-color:#00bfff;
+}
+
+.platform-logo{
+    width:110px;
+    height:110px;
+    object-fit:contain;
+    border-radius:50%;
+    background:#fff;
+    padding:10px;
+    margin:0 auto 20px;
+    box-shadow:0 0 20px rgba(0,191,255,.35);
+}
+
+.platform-card h3{
+    font-size:1.6rem;
+    margin-bottom:15px;
+    color:#fff;
+}
+
+.platform-card p{
+    color:#d6d6d6;
+    font-size:.96rem;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/* Buttons */
+
+.platform-btn{
+    display:inline-block;
+    padding:14px 34px;
+    border-radius:50px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:700;
+    background:linear-gradient(90deg,#00bfff,#007bff);
+    transition:.35s;
+}
+
+.platform-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 22px rgba(0,191,255,.5);
+}
+
+.platform-btn.red{
+    background:linear-gradient(90deg,#ff0033,#ff5a5a);
+}
+
+.platform-btn.red:hover{
+    box-shadow:0 0 22px rgba(255,0,80,.45);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.platform-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.platform-card{
+padding:28px 20px;
+}
+
+.platform-logo{
+width:90px;
+height:90px;
+}
+
+.platform-card h3{
+font-size:1.35rem;
+}
+
+.platform-btn{
+width:100%;
+max-width:260px;
+}
+
+}/* ==========================
+   PART 4 - STATS & CONTACT
+========================== */
+
+/* Stats */
+
+.stats{
+    padding:80px 20px;
+}
+
+.stats-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(14px);
+    border-radius:20px;
+    padding:30px 20px;
+    text-align:center;
+    transition:.35s;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+    border-color:#00bfff;
+    box-shadow:0 0 22px rgba(0,191,255,.35);
+}
+
+.stat-number{
+    font-size:2rem;
+    font-weight:800;
+    color:#00bfff;
+    margin-bottom:10px;
+}
+
+.stat-title{
+    color:#d6d6d6;
+    font-size:1rem;
+}
+
+/* Contact */
+
+.contact{
+    padding:80px 20px;
+}
+
+.contact-grid{
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    gap:20px;
+}
+
+.contact-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:18px;
+    border-radius:18px;
+    text-decoration:none;
+    color:#fff;
+    font-size:1.05rem;
+    font-weight:700;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    transition:.35s;
+}
+
+.contact-btn:hover{
+    transform:translateY(-5px);
+    border-color:#00bfff;
+    box-shadow:0 0 22px rgba(0,191,255,.35);
+}
+
+.contact-btn.whatsapp{
+    background:linear-gradient(90deg,#25D366,#128C7E);
+}
+
+.contact-btn.channel{
+    background:linear-gradient(90deg,#00bfff,#0066ff);
+}
+
+.contact-btn.telegram{
+    background:linear-gradient(90deg,#229ED9,#1677b8);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.contact-btn{
+font-size:.95rem;
+padding:16px;
+}
+
+}
+
+@media(max-width:480px){
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+}/* ==========================
+   PART 5 - FOOTER & EFFECTS
+========================== */
+
+.footer{
+    padding:40px 20px;
+    text-align:center;
+    background:rgba(255,255,255,.04);
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-logo{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    border-radius:50%;
+    background:#fff;
+    padding:8px;
+    margin:0 auto 15px;
+    box-shadow:0 0 18px rgba(0,191,255,.4);
+}
+
+.footer h3{
+    font-size:1.4rem;
+    margin-bottom:10px;
+}
+
+.footer p{
+    color:#bdbdbd;
+    font-size:.95rem;
+    margin-bottom:8px;
+}
+
+.footer-copy{
+    margin-top:20px;
+    color:#8f8f8f;
+    font-size:.85rem;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0b1120;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#00bfff;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#0099ff;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+.fade-up{
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.glow{
+    animation:glowPulse 2.5s infinite;
+}
+
+@keyframes glowPulse{
+    0%,100%{
+        box-shadow:0 0 15px rgba(0,191,255,.35);
+    }
+    50%{
+        box-shadow:
+        0 0 25px rgba(0,191,255,.65),
+        0 0 45px rgba(255,0,80,.35);
+    }
+}
+
+.float{
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.section,
+.platforms,
+.stats,
+.contact{
+    padding:60px 18px;
+}
+
+.section-title{
+    font-size:1.7rem;
+}
+
+.footer h3{
+    font-size:1.2rem;
+}
+
+.footer-logo{
+    width:60px;
+    height:60px;
+}
+
+}
